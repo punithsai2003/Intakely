@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Intakely</title>
+<meta name="description" content="Intakely is a pre-visit intake assistant. Patients answer a few questions before the appointment, and the doctor gets a short, checked summary.">
+<link rel="icon" href="/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="#home"><img src="/logo.png" alt="">Intakely</a>
+  <button class="burger" id="burger" aria-expanded="false" aria-controls="links">Menu</button>
+  <nav class="links" id="links" aria-label="Main">
+    <a href="#home" data-s="home">Home</a>
+    <a href="#about" data-s="about">About us</a>
+    <a href="#patient" data-s="patient">Patient</a>
+    <a href="#doctor" data-s="doctor">Doctor</a>
+    <a href="#contact" data-s="contact">Contact Us</a>
+  </nav>
+</div></header>
+
+<main>
+<section id="home">
+  <div class="wrap home-grid">
+    <div class="copy">
+    <p class="eyebrow">Pre-visit intake for clinics</p>
+    <h1>Smart intake before every visit</h1>
+    <p class="lead">Intakely is a pre-visit intake assistant. Before the appointment, the patient chooses their doctor and answers a few simple questions in English, Hindi or Telugu, one at a time. Intakely turns those answers into a short, organised summary for the doctor: the main complaint, how long it has lasted, medicines, allergies and history.</p>
+    <div class="stack">
+      <p class="body-text">Safety comes first. Emergency warning signs are caught by fixed rules, and the patient sees a clear message to call 108 straight away. AI only helps read and organise what the patient wrote, and every detail must come from the patient's own words. An accuracy check blocks any summary that doesn't match their answers. The doctor stays in control and marks each summary as reviewed.</p>
+    </div>
+    <div class="jump"><a href="#patient">I am a patient</a><a href="#doctor">I am a doctor</a></div>
+    </div>
+    <div class="orbit" role="img" aria-label="How Intakely works: patient answers, safety check, checked summary, doctor reviews">
+      <div class="spin">
+        <svg viewBox="0 0 420 420" aria-hidden="true"><circle cx="210" cy="210" r="160"/></svg>
+        <div class="n n1"><i>1</i>Answers</div>
+        <div class="n n2"><i>2</i>Safety</div>
+        <div class="n n3"><i>3</i>Summary</div>
+        <div class="n n4"><i>4</i>Review</div>
+      </div>
+      <div class="mid">
+        <p class="t1"><b>Patient answers</b>8 short questions in English, Hindi or Telugu</p>
+        <p class="t2"><b>Safety check</b>Fixed rules catch emergencies: call 108</p>
+        <p class="t3"><b>Checked summary</b>Every detail quoted from the patient's own words</p>
+        <p class="t4"><b>Doctor reviews</b>Plans the day, reads, marks as reviewed</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div><p class="eyebrow">About us</p><h2>Less paperwork, more time with the patient</h2></div>
+    <div>
+      <div class="block"><h3>Why Intakely exists</h3>
+        <p class="body-text">Every consultation starts the same way: the doctor asks the same basic questions, and the patient tries to remember everything under pressure. That time could go to examination, medication decisions and listening. Intakely moves the routine questions before the visit so the conversation can focus on the patient.</p></div>
+      <div class="block"><h3>Who built it</h3>
+        <p class="body-text" id="builder"></p></div>
+      <div class="block"><h3>What we believe</h3>
+        <ul class="beliefs">
+          <li><b>Doctors decide.</b><span>AI organises information. It never diagnoses or advises.</span></li>
+          <li><b>Safety is rule-based.</b><span>Emergency detection does not depend on AI guesswork.</span></li>
+          <li><b>Everything is traceable.</b><span>Each detail in a summary comes from something the patient actually said.</span></li>
+          <li><b>Language is not a barrier.</b><span>Patients answer in the language they are most comfortable with.</span></li>
+        </ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="patient" class="band theme-p">
+  <div class="wrap band-grid">
+    <div>
+      <p class="eyebrow">For patients</p>
+      <h2>Tell your doctor before you walk in</h2>
+      <p>It takes about three minutes. Choose your doctor, then answer eight short questions, one on each screen. Your answers go only to the doctor you pick.</p>
+      <p style="margin-top:14px">If anything you describe sounds like an emergency, you will be told to call 108 straight away.</p>
+    </div>
+    <form id="pform" novalidate>
+      <div class="row2">
+        <div class="field"><label for="pname">Name</label><input type="text" id="pname" autocomplete="name" maxlength="60"></div>
+        <div class="field"><label for="page">Age</label><input type="number" id="page" min="0" max="120" inputmode="numeric"></div>
+      </div>
+      <div class="field"><span class="fl">Language</span>
+        <div class="choices" role="radiogroup" aria-label="Language">
+          <label><input type="radio" name="lang" value="en" checked><span>English</span></label>
+          <label><input type="radio" name="lang" value="hi"><span>हिन्दी</span></label>
+          <label><input type="radio" name="lang" value="te"><span>తెలుగు</span></label>
+        </div></div>
+      <div class="field"><span class="fl">Which doctor are you meeting?</span><div class="docs" id="docs">Loading doctors…</div></div>
+      <button class="btn light" type="submit" id="pstart">START</button>
+      <div class="err" id="perr" role="alert"></div>
+    </form>
+  </div>
+</section>
+
+<section id="doctor" class="band theme-d">
+  <div class="wrap band-grid">
+    <div>
+      <p class="eyebrow">For doctors</p>
+      <h2>Know your day before you reach the clinic</h2>
+      <ol>
+        <li><span>1</span>Sign in with your doctor ID and PIN.</li>
+        <li><span>2</span>See today's patients and set the order and time for each one.</li>
+        <li><span>3</span>Read each summary with the patient's own answers beside it.</li>
+        <li><span>4</span>Mark it as reviewed when you have read it.</li>
+      </ol>
+    </div>
+    <form id="dform" novalidate>
+      <div class="field"><label for="did">Doctor ID</label><input type="text" id="did" placeholder="DR-1001" autocomplete="username" autocapitalize="characters" maxlength="20"></div>
+      <div class="field"><label for="dpin">PIN</label><input type="password" id="dpin" inputmode="numeric" autocomplete="current-password" maxlength="12"></div>
+      <button class="btn light" type="submit" id="dgo">Sign in</button>
+      <div class="err" id="derr" role="alert"></div>
+    </form>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <p class="eyebrow">Contact us</p>
+    <h2>Questions, feedback or want to try it in your clinic?</h2>
+    <div class="contact-grid">
+      <div><p class="body-text">Write to us and we will reply. Feedback from doctors and clinic staff is especially welcome while Intakely is still a prototype.</p>
+        <p class="body-text" id="contactline"></p></div>
+      <form class="cform" id="cform" novalidate>
+        <div><label for="c1">First name *</label><input type="text" id="c1" maxlength="60" autocomplete="given-name"></div>
+        <div><label for="c2">Last name</label><input type="text" id="c2" maxlength="60" autocomplete="family-name"></div>
+        <div><label for="c3">Email *</label><input type="email" id="c3" maxlength="120" autocomplete="email"></div>
+        <div><label for="c4">Telephone</label><input type="tel" id="c4" maxlength="20" autocomplete="tel"></div>
+        <div class="full"><label for="c5">Clinic or organisation</label><input type="text" id="c5" maxlength="100"></div>
+        <div class="full"><label for="c6">Message *</label><textarea id="c6" maxlength="2000"></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="c7">Website</label><input type="text" id="c7" tabindex="-1" autocomplete="off"></div>
+        <div class="full"><button class="btn" type="submit" id="csend">Send message</button><div class="cmsg" id="cmsg" role="status"></div></div>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+<footer><div class="wrap">© <span id="yr">2026</span> Intakely. All rights reserved.</div></footer>
+
+<!-- full-page views -->
+<div class="app theme-p" id="app-patient" role="dialog" aria-modal="true" aria-label="Patient questions"></div>
+<div class="app theme-d" id="app-doctor" role="dialog" aria-modal="true" aria-label="Doctor dashboard"></div>
+
+<button class="bot-fab" id="botfab" aria-expanded="false" aria-controls="bot">Ask Intakely</button>
+<section class="bot" id="bot" aria-label="Intakely help" hidden>
+  <div class="bot-head"><b>Ask Intakely</b><button id="botx" aria-label="Close">Close</button></div>
+  <div class="bot-log" id="botlog" aria-live="polite"><p class="m fb">Hi, I can answer questions about how Intakely works. I can't give medical advice.</p></div>
+  <div class="bot-chips"><button>How does it work?</button><button>Is my data safe?</button><button>Which languages?</button></div>
+  <form class="bot-in" id="botform"><input id="botq" maxlength="400" placeholder="Type your question" autocomplete="off" aria-label="Your question"><button class="btn" type="submit">Send</button></form>
+</section>
+<script src="/app.js"></script>
+</body>
+</html>
