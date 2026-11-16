@@ -1,8 +1,8 @@
 /* Intakely front end. Edit CONFIG below to personalise the site. */
 const CONFIG = {
-  builder: '',   // e.g. "Intakely was built by Your Name, a Bioinformatics and Data Science student, as a project to ..."
-  email: '',     // shown in the Contact section if set
-  linkedin: ''   // full LinkedIn profile URL, shown in the Contact section if set
+  builder: 'Punith Sai',   // e.g. "Intakely was built by Your Name, a Bioinformatics and Data Science student, as a project to ..."
+  email: 'punithsaipalakurthi@gmail.com',     // shown in the Contact section if set
+  linkedin: 'Punith sai Palakurthi'   // full LinkedIn profile URL, shown in the Contact section if set
 };
 
 const $ = s => document.querySelector(s);
